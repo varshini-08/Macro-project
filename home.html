@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Poultry Waste Company</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div id="locationModal" class="location-modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Location Permission Required</h2>
+            <p>To provide a better experience, please enable your location services.</p>
+            <button id="enableLocationBtn">Enable Location</button>
+        </div>
+    </div>
+    <header>
+        <div class="logo" id="userProfile"></div>
+        <!-- Logo and Profile Button -->
+        <div class="search-bar">
+
+            <input type="text" placeholder="Search products...">
+            <button type="button">Search</button>
+        </div> <!-- This is where the profile photo will be displayed -->
+        <nav class="nav-links">
+            <a href="track.html">Location</a>
+            <a href="waste.html">Waste</a>
+            <a href="#v">About Poultry</a>
+            <a href="#vv">Contact</a>
+            <a href="signlog.html" id="loginButton">Login</a> <!-- This is the login button -->
+            <a href="javascript:void(0);" id="logoutButton" style="display:none;">Logout</a> <!-- This is the logout button -->
+            <a href="cart.html">🛒 Cart</a>
+        </nav>
+    </header>
+<div id="locationPermissionMessage" class="location-permission-message" style="display:none;">
+    <h2>Location Permission Required</h2>
+    <p>To provide a better experience, please enable your location services.</p>
+    <button id="enableLocationMessageBtn">Enable Location</button>
+</div>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Your Poultry Waste Solutions</h1>
+                <p>Transform your farming practices with our premium poultry waste products.</p>
+                <a href="#products" class="cta-button">Explore Poultry farms</a>
+            </div>
+            <div class="hero-image">
+                <img src="m.jpg" alt="Poultry Waste Solutions" />
+            </div>
+        </section>
+        <section class="selling-list" id="products">
+            <h2>Products for Sale</h2>
+            <div class="product-container">
+                <div class="product-item">
+                    <h3>RAMALINGAM</h3>
+                    <p>Price: ₹1990</p>
+                    <p>Delivery Time: within half a day</p>
+                    <button class="buy-button" 
+                            data-price="1990" 
+                            data-product-name="RAMALINGAM" 
+                            data-delivery-time="within half a day">Buy</button>
+                </div>
+                <div class="product-item">
+                    <h3>JAYAM</h3>
+                    <p>Price: ₹1890</p>
+                    <p>Delivery Time: within half a day</p>
+                    <button class="buy-button" 
+                            data-price="1890" 
+                            data-product-name="JAYAM" 
+                            data-delivery-time="within half a day">Buy</button>
+                </div>
+                <div class="product-item">
+                    <h3>TSS</h3>
+                    <p>Price: ₹2114</p>
+                    <p>Delivery Time: within half a day</p>
+                    <button class="buy-button" 
+                            data-price="2114" 
+                            data-product-name="TSS" 
+                            data-delivery-time="within half a day">Buy</button>
+                </div>
+                <div class="product-item">
+                    <h3>PALANIAPPA</h3>
+                    <p>Price: ₹1878</p>
+                    <p>Delivery Time: within half a day</p>
+                    <button class="buy-button" 
+                            data-price="1878" 
+                            data-product-name="PALANIAPPA" 
+                            data-delivery-time="within half a day">Buy</button>
+                </div>
+                <div class="product-item">
+                    <h3>KSS</h3>
+                    <p>Price: ₹1790</p>
+                    <p>Delivery Time: within half a day</p>
+                    <button class="buy-button" 
+                            data-price="1790" 
+                            data-product-name="KSS" 
+                            data-delivery-time="within half a day">Buy</button>
+                </div>
+                <div class="product-item">
+                    <h3>JANANI</h3>
+                    <p>Price: ₹1990</p>
+                    <p>Delivery Time: within half a day</p>
+                    <button class="buy-button" 
+                            data-price="1990" 
+                            data-product-name="JANANI" 
+                            data-delivery-time="within half a day">Buy</button>
+                </div>
+                <div class="product-item">
+                    <h3>KRN</h3>
+                    <p>Price: ₹2100</p>
+                    <p>Delivery Time: within half a day</p>
+                    <button class="buy-button" 
+                            data-price="2100" 
+                            data-product-name="KRN" 
+                            data-delivery-time="within half a day">Buy</button>
+                </div>
+                <div class="product-item">
+                    <h3>KANAGARAJ</h3>
+                    <p>Price: ₹2010</p>
+                    <p>Delivery Time: within half a day</p>
+                    <button class="buy-button" 
+                            data-price="2010" 
+                            data-product-name="KANAGARAJ" 
+                            data-delivery-time="within half a day">Buy</button>
+                </div>
+            </div>
+        </section>
+     </section>
+<div id="quantityModal" class="quantity-modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close" id="closeQuantityModal">&times;</span>
+        <h2>Enter Quantity and Load Type</h2>
+        <h3 id="productTitle"></h3>
+        <p id="productPrice"></p>
+        <p id="deliveryTime"></p>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+        <label for="loadType">Load Type:</label>
+        <select id="loadType">
+            <option value="truck">Truck</option>
+            <option value="lorry">Lorry</option>
+        </select>
+        <button id="confirmPurchaseBtn">Confirm</button>
+        <button id="cancelPurchaseBtn">Cancel</button>
+    </div>
+</div>
+    <div id="quantityModal" class="quantity-modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="closeQuantityModal">&times;</span>
+            <h2>Enter Quantity</h2>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+            <button id="confirmPurchaseBtn">Confirm</button>
+            <button id="cancelPurchaseBtn">Cancel</button>
+        </div>
+    </div>
+        <section id="timeline">
+            <div class="container">
+                <div class="container" id="v">
+                <h2>Timeline of Poultry Farming</h2>
+                <div class="timeline">
+                    <div class="timeline-event">
+                        <h3>Ancient Civilizations</h3>
+                        <p>Poultry farming dates back to around 2000 BCE in the Indus Valley, China, and Egypt. Early civilizations kept chickens and ducks for food, eggs, and ritual purposes.</p>
+                       </div>
+                    <div class="timeline-event">
+                        <h3>Middle Ages</h3>
+                        <p>During the Middle Ages, poultry farming spread across Europe. Chickens were particularly popular, and they were kept for both their eggs and meat.</p>
+                    </div>
+                    <div class="timeline-event">
+                        <h3>Industrial Revolution</h3>
+                        <p>The Industrial Revolution in the 18th century introduced mechanized farming, leading to larger poultry operations.</p>
+                    </div>
+                    <div class="timeline-event">
+                        <h3>Modern-Day Poultry Farming</h3>
+                        <p>By the mid-20th century, poultry farming became highly industrialized, with factory farms emerging to meet the growing global demand.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+        <section id="intro" class="section">
+            <div class="container">
+                <h2>What is Poultry Waste?</h2>
+                <p>Poultry waste includes manure, feathers, carcasses, and eggshells. While these materials are often discarded, they can be repurposed in many sustainable ways such as composting, bioenergy production, and animal feed. Exporting poultry waste helps reduce the environmental footprint and creates new business opportunities.</p>
+            </div>
+        </section>
+        <section id="process" class="section">
+            <div class="container">
+                <h2>Export Process</h2>
+                <p>The process of exporting poultry waste involves several stages:</p>
+                <div class="process-steps">
+                    <div class="step">
+                        <h3>Step 1: Collection</h3>
+                        <p>Poultry waste is collected directly from farms in an organized manner, separating different types for easier handling.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Step 2: Packaging</h3>
+                        <p>The collected waste is packaged in secure containers or bulk bags to prevent contamination during transport.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Step 3: Transport</h3>
+                        <p>Specialized vehicles transport the waste to designated processing facilities, ensuring safe handling and transport.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Step 4: Processing & Distribution</h3>
+                        <p>The waste is processed into compost, bioenergy, or animal feed, then distributed to farms, energy plants, or feed mills.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="benefits" class="section bg-light">
+            <div class="container">
+                <h2>Why Export Poultry Waste?</h2>
+                <p>Exporting poultry waste provides numerous benefits:</p>
+                <div class="benefit-list">
+                    <div class="benefit-item">
+                        <h3>Waste Reduction</h3>
+                        <p>Poultry farms generate a significant amount of waste, and exporting it helps reduce on-site accumulation and pollution.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Income Generation</h3>
+                        <p>Farmers can earn additional income by selling poultry waste for processing or repurposing.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Sustainable Agriculture</h3>
+                        <p>Manure can be used as an organic fertilizer, reducing the need for chemical fertilizers.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Bioenergy Production</h3>
+                        <p>Poultry waste can be converted into bioenergy, supporting clean energy initiatives.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Environmental Impact</h3>
+                        <p>Proper waste management helps reduce methane emissions and prevent water contamination.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="market" class="section">
+            <div class="container">
+                <h2>Market Reach</h2>
+                <p>Poultry waste is in demand across various sectors, including:</p>
+                <ul class="market-list">
+                    <li><strong>Local Farms:</strong> Using poultry manure for fertilizing crops and pastures.</li>
+                    <li><strong>Composting Plants:</strong> Turning poultry waste into high-quality compost for gardening and farming.</li>
+                    <li><strong>Bioenergy Plants:</strong> Converting waste into renewable energy, reducing reliance on fossil fuels.</li>
+                    <li><strong>Animal Feed Manufacturers:</strong> Using processed poultry by-products in animal feed formulations.</li>
+                </ul>
+            </div>
+        </section>
+    <section id="contact" class="section">
+        <div class="container" id="vv">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Whether you have questions about exporting poultry waste or want to explore partnership opportunities, feel free to reach out to us.</p>
+            <div class="contact-details">
+                <div class="contact-info">
+                    <h3>Our Contact Details</h3>
+                    <p><strong>Phone:</strong> +91 9876048675</p>
+                    <p><strong>Email:</strong> poultrywasteexport@gmail.com</p>
+                    <p><strong>Address:</strong> W-123 Farm Lane, Agriculture Erode, Tamil Nadu, 638 060</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                        <button type="submit" class="cta-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    </body>
+    </html>
+    <footer>
+        <p>&copy; 2024 Your Poultry Waste Company. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-of-service">Terms of Service</a>
+        </div>
+    </footer>
+    <script>
+    function requestLocationPermission() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                console.log('Location retrieved:', position);
+                localStorage.setItem('locationEnabled', 'true');
+            }, function(error) {
+                alert('Location permission denied');
+            });
+        } else {
+            alert('Geolocation is not supported by this browser.');
+        }
+    }
+    function disableLocationAccess() {
+        if (localStorage.getItem('locationEnabled')) {
+            localStorage.removeItem('locationEnabled');
+            console.log('Location access disabled');
+        }
+    }
+    function updateProfileDisplay() {
+        let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        const userProfileDiv = document.getElementById('userProfile');
+        const loginButton = document.getElementById('loginButton');
+        const logoutButton = document.getElementById('logoutButton');
+        const locationModal = document.getElementById('locationModal');
+        if (isLoggedIn) {
+            userProfileDiv.innerHTML = '<img src="profile-pic.png" alt="User Profile" style="width: 40px; height: 40px; border-radius: 50%;">';
+            logoutButton.style.display = "inline-block";
+            loginButton.style.display = "none";
+            showLocationModal(); 
+        } else {
+            userProfileDiv.innerHTML = '<a href="/">l-_-l</a>'; 
+            logoutButton.style.display = "none";
+            loginButton.style.display = "inline-block";
+        }
+    }
+    function showLocationModal() {
+        const locationModal = document.getElementById('locationModal');
+        locationModal.style.display = 'block';
+    }
+    document.getElementById('logoutButton').onclick = function () {
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('cart');
+        disableLocationAccess(); 
+        updateProfileDisplay();
+        window.location.href = 'home.html';  
+    };
+
+    document.getElementById('loginButton').onclick = function () {
+        localStorage.setItem('isLoggedIn', 'true');
+        updateProfileDisplay();
+        window.location.href = 'home.html';  
+    };
+    document.getElementById('closeModal').onclick = function () {
+        const locationModal = document.getElementById('locationModal');
+        locationModal.style.display = 'none';
+    };
+    document.getElementById('enableLocationBtn').onclick = function () {
+        requestLocationPermission();
+        const locationModal = document.getElementById('locationModal');
+        locationModal.style.display = 'none';
+    };
+ document.querySelectorAll('.buy-button').forEach(button => {
+        button.addEventListener('click', function() {
+            let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            if (!isLoggedIn) {
+                alert("Please log in to buy this item.");
+            } else {
+                const price = parseFloat(button.dataset.price);
+                const productName = button.dataset.productName;
+                const deliveryTime = button.dataset.deliveryTime;
+
+                openModal(price, productName, deliveryTime);
+            }
+        });
+    });
+    function openModal(price, productName, deliveryTime) {
+        const modal = document.getElementById('quantityModal');
+        modal.style.display = 'block';
+        document.getElementById('productTitle').innerText = productName;
+        document.getElementById('productPrice').innerText = `Price: ₹${price}`;
+        document.getElementById('deliveryTime').innerText = `Delivery Time: ${deliveryTime}`;
+        document.getElementById('loadType').value = 'truck'; 
+    }
+    document.getElementById('cancelPurchaseBtn').onclick = function() {
+        const modal = document.getElementById('quantityModal');
+        modal.style.display = 'none';
+        document.getElementById('quantity').value = '';  
+    };
+document.querySelectorAll('.buy-button').forEach(button => {
+    button.addEventListener('click', function() {
+        let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        if (!isLoggedIn) {
+            alert("Please log in to buy this item.");
+        } else {
+            const price = parseFloat(button.dataset.price);
+            const productName = button.dataset.productName;
+            const deliveryTime = button.dataset.deliveryTime;
+
+            openModal(price, productName, deliveryTime);
+        }
+    });
+});
+function openModal(price, productName, deliveryTime) {
+    const modal = document.getElementById('quantityModal');
+    modal.style.display = 'block';
+    document.getElementById('productTitle').innerText = productName;
+    document.getElementById('productPrice').innerText = `Price: ₹${price}`;
+    document.getElementById('deliveryTime').innerText = `Delivery Time: ${deliveryTime}`;
+    document.getElementById('loadType').value = 'truck'; 
+}
+document.getElementById('cancelPurchaseBtn').onclick = function() {
+    const modal = document.getElementById('quantityModal');
+    modal.style.display = 'none';
+    document.getElementById('quantity').value = '';  
+};
+document.getElementById('confirmPurchaseBtn').onclick = function() {
+    const quantity = document.getElementById('quantity').value;
+    const loadType = document.getElementById('loadType').value;
+    const productName = document.getElementById('productTitle').innerText;
+    const pricePerUnit = parseFloat(document.getElementById('productPrice').innerText.replace('Price: ₹', '').trim());
+    const totalAmount = pricePerUnit * quantity;
+
+    if (quantity && quantity > 0) {
+        alert(`You have selected ${quantity} loads of ${productName} to be delivered via ${loadType}. Total: ₹${totalAmount}`);
+        const cartItem = {
+            name: productName,
+            quantity: quantity,
+            pricePerUnit: pricePerUnit,
+            loadType: loadType,
+            totalAmount: totalAmount
+        };
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let user = JSON.parse(localStorage.getItem('user')) || { name: "Guest", email: "" };  
+        cart.push({ ...cartItem, user });
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        window.location.href = 'cart.html';  
+    } else {
+        alert("Please enter a valid quantity.");
+        return; 
+    }
+    const modal = document.getElementById('quantityModal');
+    modal.style.display = 'none';
+};
+
+    window.onload = function() {
+        updateProfileDisplay();  
+
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartContainer = document.getElementById('cartItems');
+
+        if (cart.length > 0) {
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerHTML = `
+                    <h3>${item.name}</h3>
+                    <p>Quantity: ${item.quantity}</p>
+                    <p>Price: ₹${item.pricePerUnit}</p>
+                    <p>Total: ₹${item.totalAmount}</p>
+                `;
+                cartContainer.appendChild(itemDiv);
+            });
+        } else {
+            cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+        }
+    };
+</script>

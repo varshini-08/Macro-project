@@ -1,0 +1,156 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling with dynamic multi-colored gradient background */
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background: linear-gradient(45deg, 
+        rgba(255, 223, 186, 0.8), /* Light yellow */
+        rgba(255, 185, 108, 0.8), /* Light orange */
+        rgba(238, 112, 53, 0.8), /* Vibrant orange */
+        rgba(218, 75, 0, 0.8) /* Dark orange/red */
+    );
+    background-size: 300% 300%; /* Spread gradient across more space */
+    background-attachment: fixed;
+    background-position: center;
+    animation: gradientAnimation 15s ease infinite; /* Animating the gradient */
+    position: relative;
+}
+
+/* Gradient animation for smooth color change */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Add subtle hen drawings to the background */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        url('https://upload.wikimedia.org/wikipedia/commons/0/0c/Hen_icon.svg'), /* Replace with your hen SVG image URL */
+        url('https://upload.wikimedia.org/wikipedia/commons/0/0c/Hen_icon.svg'); /* Placeholder hen SVG icon */
+    background-repeat: repeat;
+    background-size: 150px; /* Size of each hen drawing */
+    opacity: 0.1; /* Light opacity to avoid overpowering the content */
+    z-index: -1;
+}
+
+/* Centering the cart container */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Cart container styles */
+.cart-container {
+    width: 80%;
+    max-width: 900px;
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* Cart header */
+.cart-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cart-header h2 {
+    font-size: 24px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/* Table styles */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-table th, .cart-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.cart-table th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Total section */
+.total-section {
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+#total-amount {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Cart action buttons */
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-buttons button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f9bf74;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-buttons button:hover {
+    background-color: #218838;
+}
+
+.cart-buttons button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .cart-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .cart-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

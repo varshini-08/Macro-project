@@ -1,0 +1,556 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Location Modal Styles */
+.location-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 9999; /* Make sure it's on top */
+    left: 0%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+/* Style for the Location Permission Pop-up Message */
+.location-permission-message {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #fff;  /* White background */
+    color: #000;  /* Black text */
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+}
+
+.location-permission-message h2 {
+    margin: 0;
+    font-size: 32px;  /* Larger font size for heading */
+    font-weight: bold;
+}
+
+.location-permission-message p {
+    margin: 10px 0;
+    font-size: 18px;  /* Set font size for paragraph */
+}
+
+.location-permission-message button {
+    background-color: #f9bf74;  /* Soft amber button background */
+    color: black;  /* Black text color on the button */
+    border: none;
+    padding: 12px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 18px;  /* Button font size */
+}
+
+.location-permission-message button:hover {
+    background-color: #e8a956;  /* Slightly darker amber on hover */
+}
+````````````````````````````````````````````````````````````````
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #f9bf74;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #131314; /* Dark background for the header */
+    padding: 15px 20px;
+    color: white;
+}
+
+header .logo a {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-bar button {
+    padding: 10px;
+    background-color: grey;
+    border: none;
+    color: #ececec;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+    
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Modal Styles */
+.quantity-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+#quantity {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#confirmPurchaseBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#cancelPurchaseBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+#purchaseDetails {
+    margin-top: 20px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    background-color: #181717;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 20px;
+}
+
+.hero-content h1,
+.hero-content p {
+    color: rgb(249, 248, 248);
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Call-to-action button */
+.cta-button {
+    background-color: #f9bf74;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Selling List Section */
+.selling-list {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.selling-list h2 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: #333;
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 15px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.buy-button {
+    background-color: #f9bf74;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.buy-button:hover {
+    background-color: #f8a300;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .product-item {
+        width: calc(50% - 30px);
+    }
+
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-item {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item {
+        width: calc(100% - 30px);
+    }
+}
+
+/* Main Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: black; /* Black background for header */
+    color: white; /* White text for contrast */
+    padding: 40px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: white; /* Black heading */
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #f9bf74; /* Light gold color for text */
+    margin-bottom: 20px;
+}
+
+/* Contact container */
+.contact-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  /* Heading */
+  .contact-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Form and input styles */
+  .contact-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .contact-form input:focus, .contact-form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+  }
+  
+  .contact-form .submit-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .contact-container {
+      padding: 20px;
+    }
+  
+    .contact-form .form-group {
+      margin-bottom: 12px;
+    }
+  
+    .contact-form .submit-btn {
+      width: 100%;
+    }
+  }
+
+/* Section Styling (Targeted with class .new-section) */
+.new-section {
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #f9bf74; /* Golden border */
+}
+
+.new-section h2 {
+    font-size: 2em;
+    color: #000000; /* Black color for section headings */
+    margin-bottom: 15px;
+}
+
+.new-section h3 {
+    font-size: 1.5em;
+    color: #000000; /* Black color for subsection headings */
+    margin-top: 20px;
+}
+
+/* Timeline Styling */
+.timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-event {
+    background-color: #f9bf74; /* Golden background */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid black; /* Black left border */
+}
+
+.timeline-image {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* List Styling */
+ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+ul li {
+    background: #f9bf74; /* Golden background for list items */
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 50px solid black; /* Black left border */
+}
+
+/* Footer Styling */
+footer {
+    background-color: black; /* Black background for footer */
+    color: white; /* White text */
+    text-align: center;
+    padding: 200px;
+    margin-top: 400px;
+}
+
+footer p {
+    font-size: 1.2em;
+    color: #ffffff; /* White text in footer */
+}
+
+/* Footer Links Styling */
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+/* Basic styling for the logo and dropdown */
+.logo-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.logo-button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.profile-dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.profile-dropdown p {
+    margin: 5px 0;
+}
+
+#signOutButton {
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#signOutButton:hover {
+    background-color: darkred;
+}

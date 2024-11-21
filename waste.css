@@ -1,0 +1,79 @@
+body {
+    background-color: #f8f9fa; /* Light background for contrast */
+    font-family: Arial, sans-serif; /* Consistent font family */
+}
+
+.jumbotron {
+    background-image: url('ch.jpeg'); /* Background image */
+    background-size: cover; /* Cover the entire jumbotron area */
+    background-position: center; /* Center the image */
+    color: white;
+    padding: 2rem; /* Increased padding for better spacing */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Centered text */
+    position: relative; /* Position relative for overlay */
+}
+
+.jumbotron::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+    z-index: 1; /* Position behind the text */
+}
+
+.jumbotron h1, .jumbotron p {
+    position: relative; /* Ensure text is above the overlay */
+    z-index: 2; /* Position above the overlay */
+}
+
+.jumbotron .btn {
+    position: relative; /* Ensure the button is above the overlay */
+    z-index: 2; /* Position above the overlay */
+    margin-top: 1rem; /* Spacing above the button */
+}
+
+.card {
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    transition: transform 0.2s, box-shadow 0.2s; /* Added box-shadow transition */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.card-img-top {
+    height: 200px; 
+    object-fit: cover; 
+    border-top-left-radius: 10px; /* Rounded corners for the top */
+    border-top-right-radius: 10px; /* Rounded corners for the top */
+}
+
+.carousel-item {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem; /* Spacing below the title */
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666; /* Slightly muted text color for better readability */
+}
+
+footer {
+    background-color: #484b49; /* Dark footer */
+    color: white;
+    text-align: center; /* Centered footer text */
+    padding: 1rem; /* Padding for footer */
+    border-top: 1px solid #ddd; /* Subtle top border */
+}

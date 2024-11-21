@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login  Signup</title>
+    <link rel="stylesheet" href="signlog.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <!-- Toggle between login and sign up -->
+            <div class="tab-buttons">
+                <button id="login-btn" class="active">Login</button>
+                <button id="signup-btn">Sign Up</button>
+                <button id="back-btn" onclick="goBack()">Back</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" action="backend.php" method="POST">
+                <h2>Login</h2>
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit" name="login">Login</button>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signup-form" action="backend.php" method="POST" style="display:none;">
+                <h2>Sign Up</h2>
+                <!-- Name field -->
+                <label for="signup-name">Full Name</label>
+                <input type="text" id="signup-name" name="username" required>
+
+                <!-- Email field -->
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" name="email" required>
+
+                <!-- Password field -->
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" name="password" required>
+
+                <!-- Confirm password field -->
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+
+                <!-- Phone number field -->
+                <label for="phone-number">Phone Number</label>
+                <input type="text" id="phone-number" name="number" required max="10">
+
+                <button type="submit" name="signup">Sign Up</button>
+                  <type="button" onclick="goToHomePage()">
+            </form>
+        </div>
+    </div>
+
+    <script src="signlog.js"></script>
+</body>
+</html>
